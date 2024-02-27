@@ -45,8 +45,6 @@ export default function Page() {
     }, 400);
   };
 
-  const trySignIn = async () => {};
-
   return (
     <KeyboardAvoidingView style={{ flex: 1 }}>
       <View style={styles.container}>
