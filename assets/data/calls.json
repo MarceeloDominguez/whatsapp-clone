@@ -1,0 +1,137 @@
+[
+    {
+      "id": "1",
+      "name": "Odessa",
+      "date": "Wed Jun 29 2024 00:04:26 GMT+0200 (Central European Summer Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=odessaduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "2",
+      "name": "Schultz",
+      "date": "Sat Jul 04 2024 15:05:56 GMT+0200 (Central European Summer Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=schultzduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "3",
+      "name": "Mclean",
+      "date": "Sun Dec 02 2024 17:16:44 GMT+0100 (Central European Standard Time)",
+      "incoming": true,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=mcleanduke@marketoid.com",
+      "video": false
+    },
+    {
+      "id": "4",
+      "name": "Marcie",
+      "date": "Wed Jun 07 2024 10:37:26 GMT+0200 (Central European Summer Time)",
+      "incoming": false,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=marcieduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "5",
+      "name": "Ewing",
+      "date": "Wed Apr 27 2024 14:30:44 GMT+0200 (Central European Summer Time)",
+      "incoming": true,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=ewingduke@marketoid.com",
+      "video": false
+    },
+    {
+      "id": "6",
+      "name": "Maynard",
+      "date": "Sun Apr 27 2024 04:22:49 GMT+0200 (Central European Summer Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=maynardduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "7",
+      "name": "Claudine",
+      "date": "Sun Feb 07 2024 19:06:18 GMT+0100 (Central European Standard Time)",
+      "incoming": false,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=claudineduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "8",
+      "name": "Sandra",
+      "date": "Mon Feb 19 2024 20:05:15 GMT+0100 (Central European Standard Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=sandraduke@marketoid.com",
+      "video": false
+    },
+    {
+      "id": "9",
+      "name": "Barry",
+      "date": "Wed Dec 14 2024 08:18:04 GMT+0100 (Central European Standard Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=barryduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "10",
+      "name": "Maria",
+      "date": "Sat Dec 13 2024 04:15:18 GMT+0100 (Central European Standard Time)",
+      "incoming": true,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=mariaduke@marketoid.com",
+      "video": false
+    },
+    {
+      "id": "11",
+      "name": "Nichols",
+      "date": "Fri Apr 08 2024 20:21:55 GMT+0100 (Central European Standard Time)",
+      "incoming": true,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=nicholsduke@marketoid.com",
+      "video": false
+    },
+    {
+      "id": "12",
+      "name": "Fitzgerald",
+      "date": "Fri Apr 25 2024 10:36:16 GMT+0200 (Central European Summer Time)",
+      "incoming": false,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=fitzgeraldduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "13",
+      "name": "Nettie",
+      "date": "Sat Sep 22 2024 21:44:43 GMT+0200 (Central European Summer Time)",
+      "incoming": false,
+      "missed": false,
+      "img": "https://i.pravatar.cc/150?u=nettieduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "14",
+      "name": "Lacy",
+      "date": "Mon Oct 03 2024 07:32:03 GMT+0100 (Central European Standard Time)",
+      "incoming": false,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=lacyduke@marketoid.com",
+      "video": true
+    },
+    {
+      "id": "15",
+      "name": "Cole",
+      "date": "Fri Apr 22 2024 12:11:20 GMT+0200 (Central European Summer Time)",
+      "incoming": true,
+      "missed": true,
+      "img": "https://i.pravatar.cc/150?u=coleduke@marketoid.com",
+      "video": true
+    }
+  ]

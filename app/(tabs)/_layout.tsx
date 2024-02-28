@@ -5,6 +5,7 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function _layout() {
   return (
@@ -19,6 +20,7 @@ export default function _layout() {
         headerShadowVisible: false,
         headerStyle: { backgroundColor: Colors.background },
         tabBarActiveTintColor: Colors.primary,
+        headerTitleAlign: "center",
       }}
     >
       <Tabs.Screen
