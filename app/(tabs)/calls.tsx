@@ -19,6 +19,17 @@ import Animated, {
   FadeOutUp,
   LinearTransition,
 } from "react-native-reanimated";
+import SwipeableRow from "@/components/SwipeableRow";
+
+interface Call {
+  id: string;
+  name: string;
+  date: string;
+  incoming: boolean;
+  missed: boolean;
+  img: string;
+  video: boolean;
+}
 
 const transition = CurvedTransition.delay(100);
 
@@ -39,6 +50,10 @@ export default function Page() {
       setItems(calls.filter((call) => call.missed));
     }
   }, [selectedOption]);
+
+  const removeCall = (call: Call) => {
+    setItems(items.filter((i) => i.id !== call.id));
+  };
 
   return (
     <View style={styles.container}>
@@ -81,44 +96,46 @@ export default function Page() {
               <View style={styles.ItemSeparatorComponent} />
             )}
             renderItem={({ item, index }) => (
-              <Animated.View
-                entering={FadeInUp.delay(index * 10)}
-                exiting={FadeOutUp}
-              >
-                <View style={styles.containerItem}>
-                  <Image source={{ uri: item.img }} style={styles.avatar} />
-                  <View style={{ flex: 1 }}>
-                    <Text
-                      style={[
-                        styles.name,
-                        { color: item.missed ? Colors.red : "#000" },
-                      ]}
-                    >
-                      {item.name}
-                    </Text>
-                    <View style={styles.wrapperIcon}>
-                      <Ionicons
-                        name={item.video ? "videocam" : "call"}
-                        size={13}
-                        color={Colors.gray}
-                      />
-                      <Text style={styles.incoming}>
-                        {item.incoming ? "Incoming" : "Outgoing"}
+              <SwipeableRow onDelete={() => removeCall(item)}>
+                <Animated.View
+                  entering={FadeInUp.delay(index * 10)}
+                  exiting={FadeOutUp}
+                >
+                  <View style={styles.containerItem}>
+                    <Image source={{ uri: item.img }} style={styles.avatar} />
+                    <View style={{ flex: 1 }}>
+                      <Text
+                        style={[
+                          styles.name,
+                          { color: item.missed ? Colors.red : "#000" },
+                        ]}
+                      >
+                        {item.name}
                       </Text>
+                      <View style={styles.wrapperIcon}>
+                        <Ionicons
+                          name={item.video ? "videocam" : "call"}
+                          size={13}
+                          color={Colors.gray}
+                        />
+                        <Text style={styles.incoming}>
+                          {item.incoming ? "Incoming" : "Outgoing"}
+                        </Text>
+                      </View>
+                    </View>
+                    <View style={styles.wrapperDate}>
+                      <Text style={styles.date}>
+                        {format(item.date, "MM.dd.yy")}
+                      </Text>
+                      <Ionicons
+                        name="information-circle-outline"
+                        size={16}
+                        color={Colors.primary}
+                      />
                     </View>
                   </View>
-                  <View style={styles.wrapperDate}>
-                    <Text style={styles.date}>
-                      {format(item.date, "MM.dd.yy")}
-                    </Text>
-                    <Ionicons
-                      name="information-circle-outline"
-                      size={16}
-                      color={Colors.primary}
-                    />
-                  </View>
-                </View>
-              </Animated.View>
+                </Animated.View>
+              </SwipeableRow>
             )}
           />
         </Animated.View>
