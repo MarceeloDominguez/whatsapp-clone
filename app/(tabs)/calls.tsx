@@ -18,6 +18,9 @@ import Animated, {
   FadeInUp,
   FadeOutUp,
   LinearTransition,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
 } from "react-native-reanimated";
 import SwipeableRow from "@/components/SwipeableRow";
 
@@ -33,13 +36,18 @@ interface Call {
 
 const transition = CurvedTransition.delay(100);
 
+const AnimatedTouchableOpacity =
+  Animated.createAnimatedComponent(TouchableOpacity);
+
 export default function Page() {
   const [isEditing, setIsEditing] = useState(false);
   const [items, setItems] = useState(calls);
   const [selectedOption, setSelectedOption] = useState("All");
+  const editing = useSharedValue(-30);
 
   const onEdit = () => {
     let editingNew = !isEditing;
+    editing.value = editingNew ? 0 : -30;
     setIsEditing(editingNew);
   };
 
@@ -54,6 +62,10 @@ export default function Page() {
   const removeCall = (call: Call) => {
     setItems(items.filter((i) => i.id !== call.id));
   };
+
+  const animatedRowStyles = useAnimatedStyle(() => ({
+    transform: [{ translateX: withTiming(editing.value) }],
+  }));
 
   return (
     <View style={styles.container}>
@@ -100,8 +112,21 @@ export default function Page() {
                 <Animated.View
                   entering={FadeInUp.delay(index * 10)}
                   exiting={FadeOutUp}
+                  style={{ flexDirection: "row", alignItems: "center" }}
                 >
-                  <View style={styles.containerItem}>
+                  <AnimatedTouchableOpacity
+                    onPress={() => removeCall(item)}
+                    style={[animatedRowStyles, { marginLeft: 8 }]}
+                  >
+                    <Ionicons
+                      name="remove-circle"
+                      size={20}
+                      color={Colors.red}
+                    />
+                  </AnimatedTouchableOpacity>
+                  <Animated.View
+                    style={[animatedRowStyles, styles.containerItem]}
+                  >
                     <Image source={{ uri: item.img }} style={styles.avatar} />
                     <View style={{ flex: 1 }}>
                       <Text
@@ -133,7 +158,7 @@ export default function Page() {
                         color={Colors.primary}
                       />
                     </View>
-                  </View>
+                  </Animated.View>
                 </Animated.View>
               </SwipeableRow>
             )}
@@ -165,7 +190,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   contentContainerStyle: {
-    //backgroundColor: "#fff",
+    backgroundColor: "#fff",
     marginHorizontal: 15,
     borderRadius: 10,
     marginTop: 20,
